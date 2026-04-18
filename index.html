@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SYSTEM_ERROR: NEON_SNAKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&family=VT323&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      @keyframes glitch-noise {
+        0% { clip-path: inset(40% 0 61% 0); }
+        20% { clip-path: inset(92% 0 1% 0); }
+        40% { clip-path: inset(43% 0 1% 0); }
+        60% { clip-path: inset(25% 0 58% 0); }
+        80% { clip-path: inset(54% 0 7% 0); }
+        100% { clip-path: inset(58% 0 43% 0); }
+      }
+      .glitch-noise {
+        animation: glitch-noise 0.2s infinite linear alternate-reverse;
+      }
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(
+          0deg,
+          rgba(0, 0, 0, 0.15) 0px,
+          rgba(0, 0, 0, 0.15) 1px,
+          transparent 1px,
+          transparent 2px
+        );
+        pointer-events: none;
+        z-index: 100;
+      }
+    </style>
+  </head>
+  <body class="bg-[#0a0a0a] text-[#00ffff] selection:bg-[#ff00ff]/30 font-['VT323']">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+
